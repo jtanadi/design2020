@@ -11,10 +11,13 @@ interface IndexPropsInterface {
   works: WorkInterface[];
 }
 
+const resumeLink = { url: "/docs/JesenTanadi_Resume.pdf", name: "Resume" };
+const emailLink = { url: "mailto:mail@jesentanadi.com", name: "Email" };
+
 export default function Index(props: IndexPropsInterface) {
   return (
     <div>
-      <BarTop />
+      <BarTop leftLink={resumeLink} rightLink={emailLink} />
       <Bio bio={props.bio} />
       <WorkContainer works={props.works} />
       <BarBottom />
