@@ -1,23 +1,21 @@
 import BarTop from "../../components/BarTop";
-import BarBottom from "../../components/BarBottom";
+import BarBottomWork from "../../components/BarBottomWork";
 import WorkHeader from "../../components/WorkHeader";
+import WorkContent from "../../components/WorkContent";
 
+import getAllWorks from "../../utils/getAllWorks";
 import getWorkIds from "../../utils/getWorkIds";
 import getWorkData from "../../utils/getWorkData";
 
-export default function Work({ workData, content }) {
-  const { heroImg, title, description, studio } = workData;
+export default function Work({ workData, content, prev, next }) {
+  const { heroImg, title, description } = workData;
 
   return (
     <div>
-      <BarTop />
-      <WorkHeader
-        heroImg={heroImg}
-        title={title}
-        description={description}
-        studio={studio}
-      />
-      <p>{content}</p>
+      <BarTop leftLink={{ url: "/", name: "Home" }} workPage={true} />
+      <WorkHeader heroImg={heroImg} title={title} description={description} />
+      <WorkContent images={content} />
+      <BarBottomWork leftLink={prev} rightLink={next} />
     </div>
   );
 }
@@ -29,6 +27,27 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { id } }) {
+  const allWorks = getAllWorks();
   const workData = getWorkData(id);
-  return { props: { workData: workData.data, content: workData.content } };
+
+  const workIdx = allWorks.findIndex((work) => work.id === id);
+
+  const prevWork = allWorks[workIdx - 1];
+  const prev = prevWork
+    ? { url: `/work/${prevWork.id}`, name: prevWork.title, icon: "◄" }
+    : null;
+
+  const nextWork = allWorks[workIdx + 1];
+  const next = nextWork
+    ? { url: `/work/${nextWork.id}`, name: nextWork.title, icon: "►" }
+    : null;
+
+  return {
+    props: {
+      workData: workData.data,
+      content: workData.content,
+      prev,
+      next,
+    },
+  };
 }
