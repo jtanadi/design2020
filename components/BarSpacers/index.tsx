@@ -1,21 +1,33 @@
-import style from "./style"
+import style from "./style";
 
-export default function BarSpacers(props: { location: string }) {
-  const { location } = props
+export default function BarSpacers(props: {
+  showMiddle?: boolean;
+  location: string;
+  middleHeight?: string;
+}) {
+  const { showMiddle, location, middleHeight } = props;
 
   if (location !== "top" && location !== "bottom") {
-    throw new Error("Only two options for location")
+    throw new Error("Only two options for location");
   }
 
   return (
     <>
-      <div className="spacer-container">
-        <div className={`spacer ${location} left`}></div>
-        <div className={`spacer ${location} middle`}></div>
-        <div className={`spacer ${location} right`}></div>
+      <div className={"spacer-container"}>
+        <div className={`spacer ${location} full-height left`} />
+
+        {showMiddle === false ? null : (
+          <div
+            className={`spacer ${location} ${
+              middleHeight || "full"
+            }-height middle`}
+          />
+        )}
+
+        <div className={`spacer ${location} full-height right`} />
       </div>
 
       <style jsx>{style}</style>
     </>
-  )
+  );
 }

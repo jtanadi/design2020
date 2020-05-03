@@ -10,10 +10,17 @@ export default css`
 
 .spacer {
   width: 1rem;
-  height: 1rem;
   position: absolute;
   background-color: white;
   z-index: 50;
+}
+
+.full-height {
+  height: 1rem;
+}
+
+.half-height {
+  height: calc(0.5rem + 1px);
 }
 
 .top {
@@ -45,10 +52,6 @@ export default css`
 @media (max-width: 850px) {
   .spacer-container {
     width: 75%;
-  }
-
-  .bottom.middle {
-    display: none;
   }
 
   .top.middle {
