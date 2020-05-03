@@ -4,6 +4,7 @@ import path from "path";
 
 import worksPath from "./worksPath";
 import getHeroImage from "./getHeroImage";
+import getImages from "./getImages";
 
 export default (id: string) => {
   const workDir = path.join(worksPath, id);
@@ -14,12 +15,12 @@ export default (id: string) => {
     console.error(`No hero image for ${workDir}`);
   }
 
-  const data = fs.readFileSync(path.join(workDir, "index.md"), "utf8");
-  const matterResult = matter(data);
+  const workFile = fs.readFileSync(path.join(workDir, "index.md"), "utf8");
+  const { data, content } = matter(workFile);
 
   return {
     id,
-    data: { heroImg, ...matterResult.data },
-    content: matterResult.content,
+    data: { heroImg, ...data, description: content },
+    content: getImages(workDir),
   };
 };

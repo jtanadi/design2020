@@ -17,14 +17,13 @@ export default () => {
     }
 
     const workFile = fs.readFileSync(path.join(workDir, "index.md"), "utf8");
-    const {
-      data: { title, description, tags },
-    } = matter(workFile);
+    const { data } = matter(workFile);
+    const { title, tags, short } = data;
 
     return {
       id: work,
       title,
-      description,
+      description: short || null,
       image,
       tags: tags.split(/,\s*/),
     };
