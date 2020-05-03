@@ -1,7 +1,7 @@
 ---
 title: "Frost Museum of Science"
 description: "Description about FMOS"
-studio: "Ralph Appelbaum Associates"
+tags: "RAA, Exhibition, Design System"
 ---
 
 Test **content** for FMOS

@@ -10,7 +10,7 @@ export default css`
   color: black;
   background-color: white;
   border-bottom: 1px solid black;
-  z-index: 99;
+  z-index: 999;
 }
 
 #buttons-container {

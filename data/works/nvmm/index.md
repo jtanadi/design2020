@@ -1,7 +1,7 @@
 ---
 title: "National Veterans Museum and Memorial"
 description: "Description about NVMM"
-studio: "Ralph Appelbaum Associates"
+tags: "RAA, Exhibition"
 ---
 
 Test content for nvmm

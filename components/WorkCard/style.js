@@ -21,10 +21,10 @@ img {
 .card-link {
   text-decoration: none;
   color: black;
-  display: block;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+  position: relative;
 }
 
 .card-link:active {
@@ -47,15 +47,22 @@ img {
 .card-container {
   flex: 1;
   width: 100%;
+  height: 100%;
   min-height: 23rem;
   padding: 1.75rem;
   position: relative;
   display: grid;
   grid-template-columns: 48.5% 48.5%;
-  grid-template-rows: 2.75rem auto;
+  grid-template-rows: auto auto;
   grid-column-gap: 3%;
   align-items: start;
   background-color: white;
+}
+
+.card-container:hover {
+  transition: all ease 0.25s;
+  box-shadow: 0 0 8px black;
+  z-index: 99;
 }
 
 .spacer {
@@ -63,6 +70,7 @@ img {
   height: 1rem;
   position: absolute;
   background-color: white;
+  z-index: 50;
 }
 
 .top-left {
@@ -88,14 +96,14 @@ img {
 .left-container {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 2;
+  grid-row-start: 3;
   grid-row-end: 3;
 }
 
 .right-container {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 2;
+  grid-row-start: 3;
   grid-row-end: 3;
 }
 
@@ -103,7 +111,7 @@ img {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-end: 3;
 }
 
 .button-container {
@@ -122,11 +130,11 @@ img {
     grid-template-columns: 48.5% 48.5%;
   }
 
-  .card-container:nth-child(even) {
+  .card-link:nth-child(even) {
     border-left: 1px solid black;
   }
 
-.card-container:nth-last-child(2) {
+  .card-link:nth-last-child(2) {
     border-bottom: 1px solid black;
   }
 }

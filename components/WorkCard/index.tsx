@@ -23,12 +23,12 @@ export default function WorkCard(props: { work: WorkInterface }) {
     <>
       <Link href={`/work/${id}`}>
         <a className="card-link">
-          <div className="card-container">
-            <div className="spacer top-left"></div>
-            <div className="spacer top-right"></div>
-            <div className="spacer bottom-left"></div>
-            <div className="spacer bottom-right"></div>
+          <div className="spacer top-left"></div>
+          <div className="spacer top-right"></div>
+          <div className="spacer bottom-left"></div>
+          <div className="spacer bottom-right"></div>
 
+          <div className="card-container">
             <h2>{title}</h2>
 
             <div className="left-container">
@@ -43,13 +43,6 @@ export default function WorkCard(props: { work: WorkInterface }) {
                 className="work-description"
                 source={description}
               />
-              <ul className="button-container">
-                {links
-                  ? links.map((link, i) => (
-                      <ButtonLink key={i} link={link} target="_blank" />
-                    ))
-                  : null}
-              </ul>
             </div>
           </div>
         </a>
