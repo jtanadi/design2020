@@ -8,7 +8,6 @@ export default function WorkContainer(props: { works: WorkInterface[] }) {
     title: "",
     description: "",
     image: "",
-    links: [],
     tags: [],
   };
 
