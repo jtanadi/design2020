@@ -72,6 +72,19 @@ p a:hover {
   margin-top: 0;
 }
 
+.work-header p {
+  font-size: 1.15rem;
+}
+
+.work-header strong {
+  font-family: "NeueHaasUnicaW1G-Bold";
+}
+
+.work-header em {
+  font-family: "NeueHaasUnicaW1G-Italic";
+}
+
+
 button {
   cursor: pointer;
 }
