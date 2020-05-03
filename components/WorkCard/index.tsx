@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
-import ButtonLink, { LinkInterface } from "../ButtonLink";
 import Tag from "../Tag";
 
 import style from "./style";
@@ -11,13 +10,12 @@ export interface WorkInterface {
   title: string;
   description: string;
   image: string;
-  links?: LinkInterface[];
   tags?: string[];
 }
 
 export default function WorkCard(props: { work: WorkInterface }) {
   const {
-    work: { id, title, description, image, links, tags },
+    work: { id, title, description, image, tags },
   } = props;
   return (
     <>
@@ -39,10 +37,12 @@ export default function WorkCard(props: { work: WorkInterface }) {
             </div>
 
             <div className="right-container">
-              <ReactMarkdown
-                className="work-description"
-                source={description}
-              />
+              {description ? (
+                <ReactMarkdown
+                  className="work-description"
+                  source={description}
+                />
+              ) : null}
             </div>
           </div>
         </a>
