@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import style from "./style";
 
 type Prop = {
@@ -8,11 +9,15 @@ type Prop = {
 };
 
 export default function WorkHeader(props: Prop) {
-  const { heroImg, title, description, studio } = props;
+  const { heroImg, title, description } = props;
   return (
     <>
       <div className="work-outer-container">
         <div className="work-content-container">
+          <div className={`spacer bottom left`}></div>
+          <div className={`spacer bottom middle`}></div>
+          <div className={`spacer bottom right`}></div>
+
           <div className="left-col">
             <img
               className="hero-img"
@@ -22,8 +27,7 @@ export default function WorkHeader(props: Prop) {
           </div>
           <div className="right-col">
             <h2>{title}</h2>
-            <p>{description}</p>
-            {studio ? <p>{studio}</p> : null}
+            <ReactMarkdown className="work-header" source={description} />
           </div>
         </div>
       </div>

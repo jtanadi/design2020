@@ -6,6 +6,7 @@ h2 {
   letter-spacing: -2px;
   line-height: 0.9;
   margin-top: 0;
+  margin-bottom: 1rem;
   font-family: "NeueHaasUnicaW1G-Bold", "Helvetica Neue", "Helvetica", sans-serif;
 }
 
@@ -22,6 +23,7 @@ h2 {
   color: black;
   background-color: white;
   border-bottom: 1px solid black;
+  position: relative;
 }
 
 .work-content-container {
@@ -34,6 +36,7 @@ h2 {
   grid-template-columns: 50% auto;
   border-left: 1px solid black;
   border-right: 1px solid black;
+  position: relative;
 }
 
 .left-col, .right-col {
@@ -52,35 +55,51 @@ h2 {
   grid-column-end: 3;
 }
 
+.spacer {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  background-color: white;
+  z-index: 50;
+}
+
+.bottom {
+  bottom: calc(-0.5rem);
+}
+
+.left {
+  left: calc(-0.5rem);
+}
+
+.middle {
+  left: calc(50% - 0.5rem);
+}
+
+.right {
+  right: calc(-0.5rem);
+}
+
 @media (max-width: 1200px) {
   h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     letter-spacing: -1px;
+    margin-bottom: 1rem;
   }
+
   .work-content-container {
     width: 90%;
   }
 }
 
-@media (min-width: 1601px) {
-  h2 {
-    font-size: 3rem;
-    letter-spacing: -7.5px;
-  }
-}
-
-@media (min-width: 1801px) {
-  h1 {
-    font-size: 10rem;
-    letter-spacing: -8px;
-  }
-}
-
 @media (max-width: 850px) {
-  h1 {
-    font-size: 5rem;
-    letter-spacing: -4px;
-    margin-bottom: 2rem;
+  h2 {
+    font-size: 2.125rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .bottom.middle {
+    display: none;
   }
 
   .work-content-container {
@@ -106,21 +125,8 @@ h2 {
 }
 
 @media (max-width: 550px) {
-  h1 {
-    font-size: 4rem;
-    letter-spacing: -3px;
-  }
-
   .work-content-container {
     width: 90%;
-  }
-}
-
-@media (max-width: 400px) {
-  h1 {
-    font-size: 3.25rem;
-    letter-spacing: -2px;
-    margin-bottom: 1rem;
   }
 }
 `
