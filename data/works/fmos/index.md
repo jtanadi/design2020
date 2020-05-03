@@ -1,7 +1,7 @@
 ---
 title: "Frost Museum of Science"
-description: "Description about FMOS"
+short: "Short description"
 tags: "RAA, Exhibition, Design System"
 ---
 
-Test **content** for FMOS
+Description for FMOS **hello world**
