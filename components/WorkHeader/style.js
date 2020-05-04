@@ -17,7 +17,7 @@ h2 {
   object-fit: cover;
 }
 
-.work-outer-container {
+#work-header-outer {
   width: 100%;
   margin-top: 3rem;
   align-items: center;
@@ -27,7 +27,7 @@ h2 {
   position: relative;
 }
 
-.work-content-container {
+#work-header-container {
   width: 85%;
   max-width: 1600px;
   min-height: calc(100vh - 6rem + 1px);
@@ -87,7 +87,7 @@ h2 {
     margin-bottom: 1rem;
   }
 
-  .work-content-container {
+  #work-header-container {
     width: 90%;
   }
 }
@@ -103,7 +103,7 @@ h2 {
     display: none;
   }
 
-  .work-content-container {
+  #work-header-container {
     width: 75%;
     padding: 1.75rem;
   }
@@ -126,7 +126,7 @@ h2 {
 }
 
 @media (max-width: 550px) {
-  .work-content-container {
+  #work-header-container {
     width: 90%;
   }
 }

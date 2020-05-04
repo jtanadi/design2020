@@ -5,7 +5,7 @@ export default ({ images }) => {
     <>
       <div id="work-content">
         {images.map((image: string, i: number) => (
-          <img key={`img-${i}`} src={`data:image/*;base64,${image}`} />
+          <img key={`img-${i}`} src={image} />
         ))}
       </div>
       <style jsx>{style}</style>

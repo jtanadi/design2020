@@ -6,7 +6,7 @@ export default () => {
   return works.map((work) => {
     return {
       params: {
-        id: work,
+        id: work.replace(/\.md$/, ""),
       },
     };
   });

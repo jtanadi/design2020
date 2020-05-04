@@ -30,7 +30,7 @@ export default function WorkCard(props: { work: WorkInterface }) {
             <h2>{title}</h2>
 
             <div className="left-container">
-              {image ? <img src={`data:image/*;base64,${image}`} /> : null}
+              {image ? <img src={image} /> : null}
               <ul className="tag-container">
                 {tags ? tags.map((tag, i) => <Tag key={i} text={tag} />) : null}
               </ul>
