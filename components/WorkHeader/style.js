@@ -4,7 +4,7 @@ export default css`
 h2 {
   font-family: "Ogg-Medium", serif;
   font-weight: normal;
-  font-size: 3.5rem;
+  font-size: 3.85rem;
   letter-spacing: -1px;
   line-height: 0.95;
   margin-top: 0;
@@ -17,7 +17,7 @@ h2 {
   object-fit: cover;
 }
 
-#work-header-outer {
+.work-outer-container {
   width: 100%;
   margin-top: 3rem;
   align-items: center;
@@ -27,7 +27,7 @@ h2 {
   position: relative;
 }
 
-#work-header-container {
+.work-content-container {
   width: 85%;
   max-width: 1600px;
   min-height: calc(100vh - 6rem + 1px);
@@ -82,19 +82,19 @@ h2 {
 
 @media (max-width: 1200px) {
   h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     letter-spacing: -1px;
     margin-bottom: 1rem;
   }
 
-  #work-header-container {
+  .work-content-container {
     width: 90%;
   }
 }
 
 @media (max-width: 850px) {
   h2 {
-    font-size: 2.75rem;
+    font-size: 3rem;
     margin-top: 1.75rem;
     margin-bottom: 1rem;
   }
@@ -103,7 +103,7 @@ h2 {
     display: none;
   }
 
-  #work-header-container {
+  .work-content-container {
     width: 75%;
     padding: 1.75rem;
   }
@@ -126,7 +126,7 @@ h2 {
 }
 
 @media (max-width: 550px) {
-  #work-header-container {
+  .work-content-container {
     width: 90%;
   }
 }
