@@ -5,7 +5,7 @@ h1 {
   font-size: 8.5rem;
   font-family: "Ogg", serif;
   font-weight: normal;
-  letter-spacing: -5px;
+  letter-spacing: -3px;
   line-height: 0.9;
   margin-top: 0;
 }
@@ -49,7 +49,7 @@ h1 {
 
 @media (max-width: 1200px) {
   h1 {
-    font-size: 6rem;
+    font-size: 6.5rem;
     letter-spacing: -4px;
   }
   .bio-content-container {
@@ -59,15 +59,15 @@ h1 {
 
 @media (min-width: 1601px) {
   h1 {
-    font-size: 9rem;
-    letter-spacing: -7.5px;
+    font-size: 10rem;
+    letter-spacing: -5px;
   }
 }
 
 @media (min-width: 1801px) {
   h1 {
-    font-size: 10rem;
-    letter-spacing: -8px;
+    font-size: 12rem;
+    letter-spacing: -7px;
   }
 }
 

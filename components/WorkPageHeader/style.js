@@ -4,11 +4,11 @@ export default css`
 h2 {
   font-family: "Ogg-Medium", serif;
   font-weight: normal;
-  font-size: 3.85rem;
+  font-size: 3.9rem;
   letter-spacing: -1px;
   line-height: 0.95;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .hero-img {
@@ -80,10 +80,17 @@ h2 {
   right: calc(-0.5rem);
 }
 
+@media (min-width: 1601px) {
+  h2 {
+    font-size: 4.25rem;
+    margin-bottom: 2.25rem;
+    letter-spacing: -1px;
+  }
+}
+
 @media (max-width: 1200px) {
   h2 {
     font-size: 3.5rem;
-    letter-spacing: -1px;
     margin-bottom: 1rem;
   }
 
