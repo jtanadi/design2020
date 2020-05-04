@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import style from "./style";
 
 import ButtonLinkFlex from "../ButtonLinkFlex";
@@ -21,7 +21,10 @@ function renderButton(id: string, link: LinkProp) {
 
 export default function BarBottom(props: Props) {
   const { leftLink, rightLink } = props;
+
+  const barRef = useRef(null);
   const [showMiddle, setShowMiddle] = useState(true);
+  const [middleHeight, setMiddleHeight] = useState("full");
   const handleSpacers = () => {
     if (
       window.innerWidth <= 850 &&
@@ -31,23 +34,34 @@ export default function BarBottom(props: Props) {
     } else {
       setShowMiddle(true);
     }
+
+    const headerElmt = document.getElementById("work-header-outer");
+    const barBottomPos = window.scrollY + barRef.current.offsetTop;
+
+    if (barBottomPos >= headerElmt.offsetTop + headerElmt.clientHeight) {
+      setMiddleHeight("half");
+    } else {
+      setMiddleHeight("full");
+    }
   };
 
   useEffect(() => {
     handleSpacers();
     window.addEventListener("resize", handleSpacers);
+    window.addEventListener("scroll", handleSpacers);
     return () => {
       window.removeEventListener("resize", handleSpacers);
+      window.removeEventListener("scroll", handleSpacers);
     };
   }, []);
 
   return (
     <>
-      <div id="bar-bottom">
+      <div id="bar-bottom" ref={barRef}>
         <BarSpacers
           location="bottom"
           showMiddle={showMiddle}
-          middleHeight="half"
+          middleHeight={middleHeight}
         />
         <div id="buttons-container">
           {renderButton("left-button", leftLink)}
