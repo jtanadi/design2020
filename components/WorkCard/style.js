@@ -2,10 +2,10 @@ import css from "styled-jsx/css"
 
 export default css`
 h2 {
+  font-family: "Ogg-Medium", serif;
+  font-weight: normal;
   font-size: 1.85rem;
   margin: -.25rem 0 1.5rem 0;
-  font-family: "NeueHaasUnicaW1G-Thin", sans-serif;
-  font-weight: normal;
   line-height: 1;
 }
 

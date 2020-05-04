@@ -2,19 +2,19 @@ import css from "styled-jsx/css"
 
 export default css`
 h2 {
-  font-size: 2.5rem;
-  letter-spacing: -2px;
-  line-height: 0.9;
+  font-family: "Ogg-Medium", serif;
+  font-weight: normal;
+  font-size: 3.85rem;
+  letter-spacing: -1px;
+  line-height: 0.95;
   margin-top: 0;
   margin-bottom: 1rem;
-  font-family: "NeueHaasUnicaW1G-Heavy", sans-serif;
-  font-weight: normal;
 }
 
 .hero-img {
-  object-fit: cover;
-  max-width: 100%;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .work-outer-container {
@@ -82,7 +82,7 @@ h2 {
 
 @media (max-width: 1200px) {
   h2 {
-    font-size: 2.25rem;
+    font-size: 3.5rem;
     letter-spacing: -1px;
     margin-bottom: 1rem;
   }
@@ -94,7 +94,7 @@ h2 {
 
 @media (max-width: 850px) {
   h2 {
-    font-size: 2.125rem;
+    font-size: 3rem;
     margin-top: 1.75rem;
     margin-bottom: 1rem;
   }

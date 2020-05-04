@@ -2,11 +2,11 @@ import css from "styled-jsx/css"
 
 export default css`
 h1 {
-  font-size: 7.5rem;
-  font-family: "NeueHaasUnicaW1G-Heavy", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 8.5rem;
+  font-family: "Ogg", serif;
   font-weight: normal;
   letter-spacing: -5px;
-  line-height: 0.85;
+  line-height: 0.9;
   margin-top: 0;
 }
 

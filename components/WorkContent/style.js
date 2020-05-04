@@ -12,13 +12,13 @@ export default css`
 }
 
 img {
-  max-width: 100%;
-  height: 100%;
+  width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
 img:not(:last-child) {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 @media (max-width: 1200px) {
