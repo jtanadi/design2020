@@ -8,6 +8,7 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Jesen Tanadi's design portfolio" />
         <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="stylesheet" href="/normalize.css" />
         <link rel="stylesheet" href="/styles.css" />
       </Head>
 
