@@ -60,15 +60,17 @@ p a:hover {
   font-size: 1rem;
 }
 
+.bio-markdown p, .work-page-header-markdown p {
+  line-height: 1.35;
+}
+
 .bio-markdown p {
   font-size: 1.25rem;
   margin-top: 0;
-  line-height: 1.25;
 }
 
 .work-page-header-markdown p {
   font-size: 1.15rem;
-  line-height: 1.25;
 }
 
 .work-page-header-markdown strong {
@@ -80,7 +82,6 @@ p a:hover {
   font-family: "NeueHaasUnicaW1G-Italic";
 }
 
-
 button {
   cursor: pointer;
 }
@@ -91,13 +92,9 @@ button:hover {
   z-index: 99;
 }
 
-@media (min-width: 1601px) {
-  .bio-markdown p, .work-page-header-markdown p {
-    line-height: 1.3;
-  }
-
+@media (min-width: 1401px) {
   .bio-markdown p {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
 
   .work-page-header-markdown p {
@@ -105,27 +102,35 @@ button:hover {
   }
 }
 
-@media (min-width: 1801px) {
-  .bio-markdown p, .work-page-header-markdown p {
-    line-height: 1.35;
+@media (min-width: 1601px) {
+  .bio-markdown p {
+    font-size: 1.35rem;
   }
 
+  .work-page-header-markdown p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1801px) {
   .bio-markdown p {
     font-size: 1.5rem;
   }
+
   .work-page-header-markdown p {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
   }
 }
 
 @media (max-width: 550px) {
-  .bio-markdown p {
+  .bio-markdown p, .work-page-header-markdown p {
     font-size: 1.125rem;
+    line-height: 1.4;
   }
 }
 
 @media (max-width: 400px) {
-  .bio-markdown p {
+  .bio-markdown p, .work-page-header-markdown p {
     font-size: 1rem;
   }
 }
