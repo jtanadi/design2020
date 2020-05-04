@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ButtonLinkFlex from "../ButtonLinkFlex";
 
 import style from "./style";
@@ -32,9 +32,11 @@ function renderButton(link: LinkProp) {
 
 export default function BarTop(props: Props) {
   const { leftLink, rightLink, workPage } = props;
+
+  const barTop = useRef(null);
+
   const [middleHeight, setMiddleHeight] = useState("full");
   const [showMiddle, setShowMiddle] = useState(true);
-
   if (workPage) {
     const handleSpacers = () => {
       if (
@@ -46,10 +48,12 @@ export default function BarTop(props: Props) {
         setShowMiddle(true);
       }
 
-      const barTop = document.getElementById("bar-top");
-      const workContent = document.getElementById("work-content");
+      const workContent = document.getElementById("work-page-content");
 
-      if (window.scrollY + barTop.clientHeight >= workContent.offsetTop) {
+      if (
+        window.scrollY + barTop.current.clientHeight >=
+        workContent.offsetTop
+      ) {
         setMiddleHeight("half");
       } else {
         setMiddleHeight("full");
@@ -70,7 +74,7 @@ export default function BarTop(props: Props) {
 
   return (
     <>
-      <div id="bar-top">
+      <div id="bar-top" ref={barTop}>
         <BarSpacers
           location="top"
           showMiddle={showMiddle}

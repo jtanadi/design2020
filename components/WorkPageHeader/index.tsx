@@ -12,8 +12,8 @@ export default function WorkHeader(props: Prop) {
   const { heroImg, title, description } = props;
   return (
     <>
-      <div id="work-header-outer">
-        <div id="work-header-container">
+      <div id="work-page-header-outer">
+        <div id="work-page-header-container">
           <div className={`spacer bottom left`}></div>
           <div className={`spacer bottom middle`}></div>
           <div className={`spacer bottom right`}></div>
@@ -27,7 +27,10 @@ export default function WorkHeader(props: Prop) {
           </div>
           <div className="right-col">
             <h2>{title}</h2>
-            <ReactMarkdown className="work-header" source={description} />
+            <ReactMarkdown
+              className="work-page-header-markdown"
+              source={description}
+            />
           </div>
         </div>
       </div>

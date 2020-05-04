@@ -65,16 +65,16 @@ p a:hover {
   margin-top: 0;
 }
 
-.work-header p {
+.work-page-header-markdown p {
   font-size: 1.15rem;
 }
 
-.work-header strong {
+.work-page-header-markdown strong {
   font-family: "NeueHaasUnicaW1G-Heavy";
   font-weight: normal;
 }
 
-.work-header em {
+.work-page-header-markdown em {
   font-family: "NeueHaasUnicaW1G-Italic";
 }
 

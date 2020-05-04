@@ -35,7 +35,7 @@ export default function BarBottom(props: Props) {
       setShowMiddle(true);
     }
 
-    const headerElmt = document.getElementById("work-header-outer");
+    const headerElmt = document.getElementById("work-page-header-outer");
     const barBottomPos = window.scrollY + barRef.current.offsetTop;
 
     if (barBottomPos >= headerElmt.offsetTop + headerElmt.clientHeight) {

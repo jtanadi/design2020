@@ -1,7 +1,7 @@
 import css from "styled-jsx/css"
 
 export default css`
-#work-content {
+#work-page-content {
   width: 85%;
   max-width: 1600px;
   min-height: 20rem;
@@ -22,13 +22,13 @@ img:not(:last-child) {
 }
 
 @media (max-width: 1200px) {
-  #work-content {
+  #work-page-content {
     width: 90%;
   }
 }
 
 @media (max-width: 850px) {
-  #work-content {
+  #work-page-content {
     width: 75%;
   }
 
@@ -38,7 +38,7 @@ img:not(:last-child) {
 }
 
 @media (max-width: 550px) {
-  #work-content {
+  #work-page-content {
     width: 90%;
   }
 }

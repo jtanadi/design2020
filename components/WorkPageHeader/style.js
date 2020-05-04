@@ -17,7 +17,7 @@ h2 {
   object-fit: cover;
 }
 
-#work-header-outer {
+#work-page-header-outer {
   width: 100%;
   margin-top: 3rem;
   align-items: center;
@@ -27,7 +27,7 @@ h2 {
   position: relative;
 }
 
-#work-header-container {
+#work-page-header-container {
   width: 85%;
   max-width: 1600px;
   min-height: calc(100vh - 6rem + 1px);
@@ -87,7 +87,7 @@ h2 {
     margin-bottom: 1rem;
   }
 
-  #work-header-container {
+  #work-page-header-container {
     width: 90%;
   }
 }
@@ -103,7 +103,7 @@ h2 {
     display: none;
   }
 
-  #work-header-container {
+  #work-page-header-container {
     width: 75%;
     padding: 1.75rem;
   }
@@ -126,7 +126,7 @@ h2 {
 }
 
 @media (max-width: 550px) {
-  #work-header-container {
+  #work-page-header-container {
     width: 90%;
   }
 }
