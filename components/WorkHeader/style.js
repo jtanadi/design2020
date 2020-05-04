@@ -7,7 +7,8 @@ h2 {
   line-height: 0.9;
   margin-top: 0;
   margin-bottom: 1rem;
-  font-family: "NeueHaasUnicaW1G-Bold", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "NeueHaasUnicaW1G-Heavy", sans-serif;
+  font-weight: normal;
 }
 
 .hero-img {
