@@ -20,6 +20,16 @@
   src: url('_fonts/NeueHaasUnicaW1G-Thin/font.woff2') format('woff2'), url('_fonts/NeueHaasUnicaW1G-Thin/font.woff') format('woff');
 }
 
+@font-face {
+  font-family: "Ogg";
+  src: url("_fonts/Ogg-Regular.otf")
+}
+
+@font-face {
+  font-family: "Ogg-Medium";
+  src: url("_fonts/Ogg-Medium.otf")
+}
+
 * {
   box-sizing: border-box;
   font-family: "NeueHaasUnicaW1G-Regular", "Helvetica Neue", "Helvetica",
@@ -61,7 +71,7 @@ p a:hover {
 }
 
 .work-header strong {
-  font-family: "NeueHaasUnicaW1G-Bold";
+  font-family: "NeueHaasUnicaW1G-Heavy";
   font-weight: normal;
 }
 
