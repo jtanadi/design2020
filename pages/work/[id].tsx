@@ -1,7 +1,7 @@
 import BarTop from "../../components/BarTop";
 import BarBottomWork from "../../components/BarBottomWork";
-import WorkHeader from "../../components/WorkHeader";
-import WorkContent from "../../components/WorkContent";
+import WorkPageHeader from "../../components/WorkPageHeader";
+import WorkPageContent from "../../components/WorkPageContent";
 
 import getAllWorks from "../../utils/getAllWorks";
 import getWorkIds from "../../utils/getWorkIds";
@@ -13,8 +13,12 @@ export default function Work({ workData, content, prev, next }) {
   return (
     <div>
       <BarTop leftLink={{ url: "/", name: "Home" }} workPage={true} />
-      <WorkHeader heroImg={heroImg} title={title} description={description} />
-      <WorkContent images={content} />
+      <WorkPageHeader
+        heroImg={heroImg}
+        title={title}
+        description={description}
+      />
+      <WorkPageContent images={content} />
       <BarBottomWork leftLink={prev} rightLink={next} />
     </div>
   );
