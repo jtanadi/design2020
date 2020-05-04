@@ -12,8 +12,8 @@ export default function WorkHeader(props: Prop) {
   const { heroImg, title, description } = props;
   return (
     <>
-      <div className="work-outer-container">
-        <div className="work-content-container">
+      <div id="work-header-outer">
+        <div id="work-header-container">
           <div className={`spacer bottom left`}></div>
           <div className={`spacer bottom middle`}></div>
           <div className={`spacer bottom right`}></div>
