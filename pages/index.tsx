@@ -1,4 +1,5 @@
-import getAllWorks from "../utils/getAllWorks";
+import fetch from "isomorphic-unfetch";
+import { api } from "../utils/endpoints";
 
 import BarTop from "../components/BarTop";
 import BarBottom from "../components/BarBottom";
@@ -27,6 +28,7 @@ export default function Index(props: IndexPropsInterface) {
 
 export async function getStaticProps() {
   const bio = require("../data/bio.md").default;
-  const works = getAllWorks();
+  const worksResponse = await fetch(`${api}/works`);
+  const works = await worksResponse.json();
   return { props: { bio, works } };
 }

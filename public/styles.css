@@ -2,32 +2,32 @@
 
 @font-face {
   font-family: 'NeueHaasUnicaW1G-Heavy';
-  src: url('_fonts/NeueHaasUnicaW1G-Heavy/font.woff2') format('woff2'), url('_fonts/NeueHaasUnicaW1G-Heavy/font.woff') format('woff');
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Heavy/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Heavy/font.woff') format('woff');
 }
 
 @font-face {
   font-family: 'NeueHaasUnicaW1G-Italic';
-  src: url('_fonts/NeueHaasUnicaW1G-Italic/font.woff2') format('woff2'), url('_fonts/NeueHaasUnicaW1G-Italic/font.woff') format('woff');
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Italic/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Italic/font.woff') format('woff');
 }
 
 @font-face {
   font-family: 'NeueHaasUnicaW1G-Regular';
-  src: url('_fonts/NeueHaasUnicaW1G-Regular/font.woff2') format('woff2'), url('_fonts/NeueHaasUnicaW1G-Regular/font.woff') format('woff');
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Regular/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Regular/font.woff') format('woff');
 }
 
 @font-face {
   font-family: 'NeueHaasUnicaW1G-Thin';
-  src: url('_fonts/NeueHaasUnicaW1G-Thin/font.woff2') format('woff2'), url('_fonts/NeueHaasUnicaW1G-Thin/font.woff') format('woff');
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Thin/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Thin/font.woff') format('woff');
 }
 
 @font-face {
   font-family: "Ogg";
-  src: url("_fonts/Ogg-Regular.otf")
+  src: url("https://design2020-api.jtanadi.now.sh/fonts/Ogg-Regular.otf")
 }
 
 @font-face {
   font-family: "Ogg-Medium";
-  src: url("_fonts/Ogg-Medium.otf")
+  src: url("https://design2020-api.jtanadi.now.sh/fonts/Ogg-Medium.otf")
 }
 
 * {

@@ -7,8 +7,6 @@ export default function WorkContainer(props: { works: WorkInterface[] }) {
     id: "#",
     title: "",
     description: "",
-    image: "",
-    tags: [],
   };
 
   if (works.length % 2 !== 0) {

@@ -2,6 +2,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 import Tag from "../Tag";
+import { domain } from "../../utils/endpoints";
 
 import style from "./style";
 
@@ -9,13 +10,13 @@ export interface WorkInterface {
   id: string;
   title: string;
   description: string;
-  image: string;
+  hero?: string;
   tags?: string[];
 }
 
 export default function WorkCard(props: { work: WorkInterface }) {
   const {
-    work: { id, title, description, image, tags },
+    work: { id, title, description, hero, tags },
   } = props;
   return (
     <>
@@ -30,7 +31,7 @@ export default function WorkCard(props: { work: WorkInterface }) {
             <h2>{title}</h2>
 
             <div className="left-container">
-              {image ? <img src={image} /> : null}
+              {hero ? <img src={`${domain}/${hero}`} /> : null}
               <ul className="tag-container">
                 {tags ? tags.map((tag, i) => <Tag key={i} text={tag} />) : null}
               </ul>

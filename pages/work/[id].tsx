@@ -1,23 +1,18 @@
+import fetch from "isomorphic-unfetch";
+import { api } from "../../utils/endpoints";
+
 import BarTop from "../../components/BarTop";
 import BarBottomWork from "../../components/BarBottomWork";
 import WorkPageHeader from "../../components/WorkPageHeader";
 import WorkPageContent from "../../components/WorkPageContent";
 
-import getAllWorks from "../../utils/getAllWorks";
-import getWorkIds from "../../utils/getWorkIds";
-import getWorkData from "../../utils/getWorkData";
-
 export default function Work({ workData, content, prev, next }) {
-  const { heroImg, title, description } = workData;
+  const { hero, title, description } = workData;
 
   return (
     <div>
       <BarTop leftLink={{ url: "/", name: "Home" }} workPage={true} />
-      <WorkPageHeader
-        heroImg={heroImg}
-        title={title}
-        description={description}
-      />
+      <WorkPageHeader hero={hero} title={title} description={description} />
       <WorkPageContent images={content} />
       <BarBottomWork leftLink={prev} rightLink={next} />
     </div>
@@ -26,13 +21,17 @@ export default function Work({ workData, content, prev, next }) {
 
 export async function getStaticPaths() {
   // [ {params: {id: nvmm}}, {params: {id: fmos}}]
-  const paths = getWorkIds();
+  const pathsResponse = await fetch(`${api}/ids`);
+  const paths = await pathsResponse.json();
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params: { id } }) {
-  const allWorks = getAllWorks();
-  const workData = getWorkData(id);
+  const worksResponse = await fetch(`${api}/works`);
+  const allWorks = await worksResponse.json();
+
+  const workResponse = await fetch(`${api}/work/${id}`);
+  const workData = await workResponse.json();
 
   const workIdx = allWorks.findIndex((work) => work.id === id);
 

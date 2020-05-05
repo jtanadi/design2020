@@ -1,15 +1,16 @@
 import ReactMarkdown from "react-markdown";
+import { domain } from "../../utils/endpoints";
 import style from "./style";
 
 type Prop = {
-  heroImg: string;
+  hero: string;
   title: string;
   description: string;
   studio?: string;
 };
 
 export default function WorkHeader(props: Prop) {
-  const { heroImg, title, description } = props;
+  const { hero, title, description } = props;
   return (
     <>
       <div id="work-page-header-outer">
@@ -21,7 +22,7 @@ export default function WorkHeader(props: Prop) {
           <div className="left-col">
             <img
               className="hero-img"
-              src={heroImg}
+              src={`${domain}/${hero}`}
               alt={`Hero image for ${title}`}
             />
           </div>
