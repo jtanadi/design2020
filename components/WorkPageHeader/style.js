@@ -1,25 +1,33 @@
 import css from "styled-jsx/css"
 
 export default css`
-h1 {
-  font-size: 8.5rem;
-  font-family: "Ogg", serif;
+h2 {
+  font-family: "Ogg-Medium", serif;
   font-weight: normal;
-  letter-spacing: -3px;
-  line-height: 0.9;
+  font-size: 3.9rem;
+  letter-spacing: -1px;
+  line-height: 0.95;
   margin-top: 0;
+  margin-bottom: 1.75rem;
 }
 
-.bio-outer-container {
+.hero-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#work-page-header-outer {
   width: 100%;
   margin-top: 3rem;
   align-items: center;
   color: black;
   background-color: white;
   border-bottom: 1px solid black;
+  position: relative;
 }
 
-.bio-content-container {
+#work-page-header-container {
   width: 85%;
   max-width: 1600px;
   min-height: calc(100vh - 6rem + 1px);
@@ -29,6 +37,7 @@ h1 {
   grid-template-columns: 50% auto;
   border-left: 1px solid black;
   border-right: 1px solid black;
+  position: relative;
 }
 
 .left-col, .right-col {
@@ -47,38 +56,61 @@ h1 {
   grid-column-end: 3;
 }
 
-@media (max-width: 1200px) {
-  h1 {
-    font-size: 6.5rem;
-    letter-spacing: -4px;
+.spacer {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  background-color: white;
+  z-index: 50;
+}
+
+.bottom {
+  bottom: calc(-0.5rem);
+}
+
+.left {
+  left: calc(-0.5rem);
+}
+
+.middle {
+  left: calc(50% - 0.5rem);
+}
+
+.right {
+  right: calc(-0.5rem);
+}
+
+@media (min-width: 1601px) {
+  h2 {
+    font-size: 4.25rem;
+    margin-bottom: 2.25rem;
+    letter-spacing: -1px;
   }
-  .bio-content-container {
+}
+
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #work-page-header-container {
     width: 90%;
   }
 }
 
-@media (min-width: 1601px) {
-  h1 {
-    font-size: 10rem;
-    letter-spacing: -5px;
-  }
-}
-
-@media (min-width: 1801px) {
-  h1 {
-    font-size: 12rem;
-    letter-spacing: -7px;
-  }
-}
-
 @media (max-width: 850px) {
-  h1 {
-    font-size: 5rem;
-    letter-spacing: -4px;
-    margin-bottom: 2rem;
+  h2 {
+    font-size: 3rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
   }
 
-  .bio-content-container {
+  .bottom.middle {
+    display: none;
+  }
+
+  #work-page-header-container {
     width: 75%;
     padding: 1.75rem;
   }
@@ -101,21 +133,8 @@ h1 {
 }
 
 @media (max-width: 550px) {
-  h1 {
-    font-size: 4rem;
-    letter-spacing: -3px;
-  }
-
-  .bio-content-container {
+  #work-page-header-container {
     width: 90%;
-  }
-}
-
-@media (max-width: 400px) {
-  h1 {
-    font-size: 3.25rem;
-    letter-spacing: -2px;
-    margin-bottom: 1rem;
   }
 }
 `

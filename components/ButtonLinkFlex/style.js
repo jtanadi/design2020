@@ -3,14 +3,10 @@ import css from "styled-jsx/css"
 export default css`
 .button-container {
   flex: 1;
-}
-
-#left-button, #right-button {
   border-right: 1px solid black;
-  background-color: red;
 }
 
-#left-button {
+.button-container:first-child {
   border-left: 1px solid black;
 }
 

@@ -2,10 +2,9 @@ import css from "styled-jsx/css"
 
 export default css`
 h1 {
-  font-size: 8.5rem;
-  font-family: "Ogg", serif;
-  font-weight: normal;
-  letter-spacing: -3px;
+  font-size: 7.5rem;
+  font-family: "NeueHaasUnicaW1G-Bold", "Helvetica Neue", "Helvetica", sans-serif;
+  letter-spacing: -6px;
   line-height: 0.9;
   margin-top: 0;
 }
@@ -49,7 +48,7 @@ h1 {
 
 @media (max-width: 1200px) {
   h1 {
-    font-size: 6.5rem;
+    font-size: 6rem;
     letter-spacing: -4px;
   }
   .bio-content-container {
@@ -59,15 +58,15 @@ h1 {
 
 @media (min-width: 1601px) {
   h1 {
-    font-size: 10rem;
-    letter-spacing: -5px;
+    font-size: 9rem;
+    letter-spacing: -7.5px;
   }
 }
 
 @media (min-width: 1801px) {
   h1 {
-    font-size: 12rem;
-    letter-spacing: -7px;
+    font-size: 10rem;
+    letter-spacing: -8px;
   }
 }
 

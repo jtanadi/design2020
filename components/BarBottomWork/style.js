@@ -1,16 +1,16 @@
 import css from "styled-jsx/css"
 
 export default css`
-#bar-top {
+#bar-bottom {
   width: 100%;
-  height: 3rem;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
-  color: black;
+  z-index: 99;
   background-color: white;
-  border-bottom: 1px solid black;
-  z-index: 999;
+  border-top: 1px solid black;
+  color: black;
+  height: 3rem;
 }
 
 #buttons-container {

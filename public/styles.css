@@ -1,0 +1,137 @@
+@import url("//hello.myfonts.net/count/3b7b9d");
+
+@font-face {
+  font-family: 'NeueHaasUnicaW1G-Heavy';
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Heavy/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Heavy/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NeueHaasUnicaW1G-Italic';
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Italic/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Italic/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NeueHaasUnicaW1G-Regular';
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Regular/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Regular/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NeueHaasUnicaW1G-Thin';
+  src: url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Thin/font.woff2') format('woff2'), url('https://design2020-api.jtanadi.now.sh/fonts/NeueHaasUnicaW1G-Thin/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Ogg";
+  src: url("https://design2020-api.jtanadi.now.sh/fonts/Ogg-Regular.otf")
+}
+
+@font-face {
+  font-family: "Ogg-Medium";
+  src: url("https://design2020-api.jtanadi.now.sh/fonts/Ogg-Medium.otf")
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "NeueHaasUnicaW1G-Regular", "Helvetica Neue", "Helvetica",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+em {
+  font-family: "NeueHaasUnicaW1G-Italic";
+}
+
+p a {
+  color: black;
+}
+
+p a:hover {
+  border-bottom: none;
+  box-shadow: 0px 0px 8px black;
+  transition: all ease 0.25s;
+  text-decoration: none;
+}
+
+.work-description p {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.bio-markdown p, .work-page-header-markdown p {
+  line-height: 1.35;
+}
+
+.bio-markdown p {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+.work-page-header-markdown p {
+  font-size: 1.15rem;
+}
+
+.work-page-header-markdown strong {
+  font-family: "NeueHaasUnicaW1G-Heavy";
+  font-weight: normal;
+}
+
+.work-page-header-markdown em {
+  font-family: "NeueHaasUnicaW1G-Italic";
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0px 0px 8px black;
+  transition: all ease 0.25s;
+  z-index: 99;
+}
+
+@media (min-width: 1401px) {
+  .bio-markdown p {
+    font-size: 1.3rem;
+  }
+
+  .work-page-header-markdown p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1601px) {
+  .bio-markdown p {
+    font-size: 1.35rem;
+  }
+
+  .work-page-header-markdown p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1801px) {
+  .bio-markdown p {
+    font-size: 1.5rem;
+  }
+
+  .work-page-header-markdown p {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .bio-markdown p, .work-page-header-markdown p {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 400px) {
+  .bio-markdown p, .work-page-header-markdown p {
+    font-size: 1rem;
+  }
+}
+
