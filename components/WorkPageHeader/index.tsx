@@ -22,7 +22,7 @@ export default function WorkHeader(props: Prop) {
           <div className="left-col">
             <img
               className="hero-img"
-              src={`${domain}/${hero}`}
+              src={`${domain}${hero}`}
               alt={`Hero image for ${title}`}
             />
           </div>
