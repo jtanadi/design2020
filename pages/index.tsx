@@ -27,8 +27,11 @@ export default function Index(props: IndexPropsInterface) {
 }
 
 export async function getStaticProps() {
-  const bio = require("../data/bio.md").default;
+  const bioResponse = await fetch(`${api}/bio`);
+  const bio = await bioResponse.json();
+
   const worksResponse = await fetch(`${api}/works`);
   const works = await worksResponse.json();
+
   return { props: { bio, works } };
 }
