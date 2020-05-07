@@ -14,38 +14,59 @@ export interface WorkInterface {
   tags?: string[];
 }
 
-export default function WorkCard(props: { work: WorkInterface }) {
+function _WorkCard(props: { work: WorkInterface; hover: boolean }) {
   const {
-    work: { id, title, description, hero, tags },
+    work: { title, hero, tags, description },
+    hover,
   } = props;
+
   return (
     <>
-      <Link href={`/work/${id}`}>
+      <div className="spacer top-left"></div>
+      <div className="spacer top-right"></div>
+      <div className="spacer bottom-left"></div>
+      <div className="spacer bottom-right"></div>
+
+      <div className={`card-container ${!hover ? "no-hover" : ""}`}>
+        <h2>{title}</h2>
+
+        <div className="left-container">
+          {hero ? <img src={`${domain}${hero}`} /> : null}
+          <ul className="tag-container">
+            {tags ? tags.map((tag, i) => <Tag key={i} text={tag} />) : null}
+          </ul>
+        </div>
+
+        <div className="right-container">
+          {description ? (
+            <ReactMarkdown className="work-description" source={description} />
+          ) : null}
+        </div>
+      </div>
+      <style jsx>{style}</style>
+    </>
+  );
+}
+
+export default function WorkCard(props: { work: WorkInterface }) {
+  const { work } = props;
+
+  if (work.id === "#") {
+    return (
+      <>
+        <div className="card-link">
+          <_WorkCard work={work} hover={false} />
+        </div>
+        <style jsx>{style}</style>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <Link href={work.id !== "#" ? `/work/${work.id}` : ""}>
         <a className="card-link">
-          <div className="spacer top-left"></div>
-          <div className="spacer top-right"></div>
-          <div className="spacer bottom-left"></div>
-          <div className="spacer bottom-right"></div>
-
-          <div className="card-container">
-            <h2>{title}</h2>
-
-            <div className="left-container">
-              {hero ? <img src={`${domain}${hero}`} /> : null}
-              <ul className="tag-container">
-                {tags ? tags.map((tag, i) => <Tag key={i} text={tag} />) : null}
-              </ul>
-            </div>
-
-            <div className="right-container">
-              {description ? (
-                <ReactMarkdown
-                  className="work-description"
-                  source={description}
-                />
-              ) : null}
-            </div>
-          </div>
+          <_WorkCard work={work} hover={true} />
         </a>
       </Link>
       <style jsx>{style}</style>
