@@ -1,16 +1,17 @@
 import ReactMarkdown from "react-markdown";
 import { domain } from "../../utils/endpoints";
-import style from "./style";
 
-type Prop = {
+import style from "./style";
+import ButtonLink, { LinkInterface } from "../ButtonLink";
+
+export type HeaderData = {
   hero: string;
   title: string;
   description: string;
-  studio?: string;
 };
 
-export default function WorkHeader(props: Prop) {
-  const { hero, title, description } = props;
+export default function WorkHeader({ headerData }) {
+  const { hero, title, description, links } = headerData;
   return (
     <>
       <div id="work-page-header-outer">
@@ -32,6 +33,13 @@ export default function WorkHeader(props: Prop) {
               className="work-page-header-markdown"
               source={description}
             />
+            <ul className="buttons-container">
+              {links
+                ? links.map((link: LinkInterface, i: number) => (
+                    <ButtonLink key={`link-${i}`} link={link} />
+                  ))
+                : null}
+            </ul>
           </div>
         </div>
       </div>
