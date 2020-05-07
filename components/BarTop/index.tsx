@@ -49,14 +49,15 @@ export default function BarTop(props: Props) {
       }
 
       const workContent = document.getElementById("work-page-content");
-
-      if (
-        window.scrollY + barTop.current.clientHeight >=
-        workContent.offsetTop
-      ) {
-        setMiddleHeight("half");
-      } else {
-        setMiddleHeight("full");
+      if (workContent) {
+        if (
+          window.scrollY + barTop.current.clientHeight >=
+          workContent.offsetTop
+        ) {
+          setMiddleHeight("half");
+        } else {
+          setMiddleHeight("full");
+        }
       }
     };
 
