@@ -7,13 +7,11 @@ import WorkPageHeader from "../../components/WorkPageHeader";
 import WorkPageContent from "../../components/WorkPageContent";
 
 export default function Work({ workData, content, prev, next }) {
-  const { hero, title, description } = workData;
-
   return (
     <div>
       <BarTop leftLink={{ url: "/", name: "Home" }} workPage={true} />
-      <WorkPageHeader hero={hero} title={title} description={description} />
-      <WorkPageContent images={content} />
+      <WorkPageHeader headerData={workData} />
+      {content.length ? <WorkPageContent images={content} /> : null}
       <BarBottomWork leftLink={prev} rightLink={next} />
     </div>
   );
