@@ -35,7 +35,6 @@ export default function BarTop(props: Props) {
 
   const barTop = useRef(null);
 
-  const [middleHeight, setMiddleHeight] = useState("full");
   const [showMiddle, setShowMiddle] = useState(true);
   if (workPage) {
     const handleSpacers = () => {
@@ -54,9 +53,9 @@ export default function BarTop(props: Props) {
           window.scrollY + barTop.current.clientHeight >=
           workContent.offsetTop
         ) {
-          setMiddleHeight("half");
+          setShowMiddle(false);
         } else {
-          setMiddleHeight("full");
+          setShowMiddle(true);
         }
       }
     };
@@ -76,11 +75,7 @@ export default function BarTop(props: Props) {
   return (
     <>
       <div id="bar-top" ref={barTop}>
-        <BarSpacers
-          location="top"
-          showMiddle={showMiddle}
-          middleHeight={middleHeight}
-        />
+        <BarSpacers location="top" showMiddle={showMiddle} />
         <div id="buttons-container">
           {renderButton(leftLink)}
           {renderButton(rightLink)}
