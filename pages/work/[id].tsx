@@ -11,7 +11,7 @@ export default function Work({ workData, content, prev, next }) {
     <div>
       <BarTop leftLink={{ url: "/", name: "Home" }} workPage={true} />
       <WorkPageHeader headerData={workData} />
-      {content.length ? <WorkPageContent images={content} /> : null}
+      {content.length ? <WorkPageContent content={content} /> : null}
       <BarBottomWork leftLink={prev} rightLink={next} />
     </div>
   );
