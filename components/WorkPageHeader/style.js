@@ -42,9 +42,9 @@ export default css`
 
   .buttons-container {
     padding: 0;
+    margin: 1rem auto;
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.5rem;
     justify-content: center;
   }
 
