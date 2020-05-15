@@ -3,7 +3,7 @@ import css from "styled-jsx/css";
 export default css`
   .button-container {
     flex: 1;
-    margin: 0.5rem 0.5rem 0 0;
+    margin: 0.5rem 1rem 0 0;
     max-width: 33.3%;
     position: relative;
   }
