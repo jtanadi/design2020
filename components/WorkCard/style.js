@@ -69,7 +69,6 @@ export default css`
 
   .card-container.no-hover:hover {
     box-shadow: none;
-    border-bottom: 1px solid black;
   }
 
   .spacer {
