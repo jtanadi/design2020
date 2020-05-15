@@ -49,6 +49,10 @@ em {
   font-family: "NeueHaasUnicaW1G-Italic";
 }
 
+p:last-child {
+  margin-bottom: 0;
+}
+
 p a {
   color: black;
 }
