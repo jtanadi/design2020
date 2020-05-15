@@ -33,13 +33,13 @@ export default function WorkHeader({ headerData }) {
               className="work-page-header-markdown"
               source={description}
             />
-            <ul className="buttons-container">
+            <div className="buttons-container">
               {links
                 ? links.map((link: LinkInterface, i: number) => (
                     <ButtonLink key={`link-${i}`} link={link} />
                   ))
                 : null}
-            </ul>
+            </div>
           </div>
         </div>
       </div>

@@ -44,7 +44,8 @@ export default css`
     padding: 0;
     display: flex;
     flex-direction: row;
-    flex-shrink: 1;
+    margin-bottom: 0.5rem;
+    justify-content: center;
   }
 
   .left-col,
