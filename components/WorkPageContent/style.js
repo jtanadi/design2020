@@ -11,6 +11,11 @@ export default css`
     border-right: 1px solid black;
   }
 
+  #content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
   @media (max-width: 1200px) {
     #work-page-content {
       width: 90%;
