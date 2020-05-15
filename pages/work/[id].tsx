@@ -18,7 +18,6 @@ export default function Work({ workData, content, prev, next }) {
 }
 
 export async function getStaticPaths() {
-  // [ {params: {id: nvmm}}, {params: {id: fmos}}]
   const pathsResponse = await fetch(`${api}/ids`);
   const paths = await pathsResponse.json();
   return { paths, fallback: false };
@@ -33,12 +32,12 @@ export async function getStaticProps({ params: { id } }) {
 
   const workIdx = allWorks.findIndex((work) => work.id === id);
 
-  const prevWork = allWorks[workIdx - 1];
+  const prevWork = allWorks[workIdx - 1] || allWorks[allWorks.length - 1];
   const prev = prevWork
     ? { url: `/work/${prevWork.id}`, name: prevWork.title, icon: "◄" }
     : null;
 
-  const nextWork = allWorks[workIdx + 1];
+  const nextWork = allWorks[workIdx + 1] || allWorks[0];
   const next = nextWork
     ? { url: `/work/${nextWork.id}`, name: nextWork.title, icon: "►" }
     : null;
