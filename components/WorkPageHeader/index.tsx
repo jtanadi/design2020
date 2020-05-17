@@ -11,7 +11,57 @@ export type HeaderData = {
 };
 
 export default function WorkHeader({ headerData }) {
-  const { hero, title, description, links } = headerData;
+  const { hero, title, description, links, awards, footnotes } = headerData;
+
+  const renderButtons = () => {
+    return links ? (
+      <>
+        <div className="buttons-container">
+          {links.map((link: LinkInterface, i: number) => (
+            <ButtonLink key={`link-${i}`} link={link} />
+          ))}{" "}
+        </div>
+        <style jsx>{style}</style>
+      </>
+    ) : null;
+  };
+
+  const renderAwards = () => {
+    return awards ? (
+      <>
+        <ul>
+          {awards.map((award: string, i: number) => (
+            <li key={`award-${i}`}>
+              <ReactMarkdown
+                className="work-page-header-award"
+                source={award}
+              />
+            </li>
+          ))}
+        </ul>
+        <style jsx>{style}</style>
+      </>
+    ) : null;
+  };
+
+  const renderFootnotes = () => {
+    return footnotes ? (
+      <>
+        <ul>
+          {footnotes.map((footnote: string, i: number) => (
+            <li key={`footnote-${i}`}>
+              <ReactMarkdown
+                className="work-page-header-footnote"
+                source={footnote}
+              />
+            </li>
+          ))}
+        </ul>
+        <style jsx>{style}</style>
+      </>
+    ) : null;
+  };
+
   return (
     <>
       <div id="work-page-header-outer">
@@ -30,16 +80,12 @@ export default function WorkHeader({ headerData }) {
           <div className="right-col">
             <h2>{title}</h2>
             <ReactMarkdown
-              className="work-page-header-markdown"
+              className="work-page-header-description"
               source={description}
             />
-            <div className="buttons-container">
-              {links
-                ? links.map((link: LinkInterface, i: number) => (
-                    <ButtonLink key={`link-${i}`} link={link} />
-                  ))
-                : null}
-            </div>
+            {renderButtons()}
+            {renderAwards()}
+            {renderFootnotes()}
           </div>
         </div>
       </div>
