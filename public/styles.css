@@ -54,11 +54,11 @@ p:last-child {
   margin-bottom: 0;
 }
 
-p a {
+p a, li a {
   color: black;
 }
 
-p a:hover {
+p a:hover, li a:hover {
   border-bottom: none;
   box-shadow: 0px 0px 8px black;
   transition: all ease 0.25s;
@@ -66,11 +66,13 @@ p a:hover {
 }
 
 .work-description p {
-  margin-top: 0;
-  font-size: 1rem;
+  margin-top: -6px;
+  font-size: 1.05rem;
 }
 
-.bio-markdown p, .work-page-header-markdown p {
+.work-description p,
+.bio-markdown p,
+.work-page-header-description p {
   line-height: 1.35;
 }
 
@@ -79,17 +81,28 @@ p a:hover {
   margin-top: 0;
 }
 
-.work-page-header-markdown p {
-  font-size: 1.15rem;
+.work-page-header-description p {
+  font-size: 1.2rem;
 }
 
-.work-page-header-markdown strong {
+.work-page-header-description strong {
   font-family: "NeueHaasUnicaW1G-Heavy";
   font-weight: normal;
 }
 
-.work-page-header-markdown em {
+.work-page-header-description em {
   font-family: "NeueHaasUnicaW1G-Italic";
+}
+
+.work-page-header-award li {
+  font-size: 1rem;
+}
+
+.work-page-header-award p,
+.work-page-header-footnote p {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 1.05rem;
 }
 
 button {
@@ -103,22 +116,26 @@ button:hover {
 }
 
 @media (min-width: 1401px) {
-  .bio-markdown p {
-    font-size: 1.3rem;
+  .work-description p {
+    font-size: 1.125rem;
   }
 
-  .work-page-header-markdown p {
-    font-size: 1.25rem;
-  }
-}
-
-@media (min-width: 1601px) {
   .bio-markdown p {
     font-size: 1.35rem;
   }
 
   .work-page-header-markdown p {
     font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1601px) {
+  .bio-markdown p {
+    font-size: 1.4rem;
+  }
+
+  .work-page-header-description p {
+    font-size: 1.325rem;
   }
 }
 
@@ -127,21 +144,38 @@ button:hover {
     font-size: 1.5rem;
   }
 
-  .work-page-header-markdown p {
-    font-size: 1.35rem;
+  .work-page-header-description p {
+    font-size: 1.325rem;
+  }
+
+  .work-page-header-award p,
+  .work-page-header-footnote p {
+    font-size: 1.15rem;
   }
 }
 
 @media (max-width: 550px) {
-  .bio-markdown p, .work-page-header-markdown p {
-    font-size: 1.125rem;
+  .work-description p {
+    margin-top: 1rem;
+  }
+
+  .bio-markdown p, .work-page-header-description p {
+    font-size: 1.15rem;
     line-height: 1.4;
+  }
+
+  .work-page-header-markdown li {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 400px) {
-  .bio-markdown p, .work-page-header-markdown p {
+  .bio-markdown p, .work-page-header-description p {
     font-size: 1rem;
+  }
+
+  .work-page-header-markdown li {
+    font-size: 0.85rem;
   }
 }
 

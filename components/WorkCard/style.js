@@ -14,10 +14,9 @@ export default css`
   }
 
   img {
-    max-width: 100%;
-    height: 15rem;
+    width: 100%;
     display: inline-block;
-    object-fit: cover;
+    object-fit: scale-down;
   }
 
   .card-link {
@@ -50,7 +49,6 @@ export default css`
     flex: 1;
     width: 100%;
     height: 100%;
-    min-height: 23rem;
     padding: 1.75rem;
     position: relative;
     display: grid;
@@ -58,6 +56,7 @@ export default css`
     grid-template-rows: auto auto;
     grid-column-gap: 3%;
     align-items: start;
+    align-content: start;
     background-color: white;
   }
 
@@ -102,14 +101,14 @@ export default css`
   .left-container {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 3;
+    grid-row-start: 2;
     grid-row-end: 3;
   }
 
   .right-container {
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 3;
+    grid-row-start: 2;
     grid-row-end: 3;
   }
 
@@ -117,7 +116,7 @@ export default css`
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
   }
 
   @media (max-width: 1200px) {

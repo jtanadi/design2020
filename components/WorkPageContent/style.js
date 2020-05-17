@@ -6,7 +6,7 @@ export default css`
     max-width: 1600px;
     min-height: 20rem;
     margin: 0 auto 3rem auto;
-    padding: 1.75rem;
+    padding: 4rem 6rem;
     border-left: 1px solid black;
     border-right: 1px solid black;
   }
@@ -19,12 +19,14 @@ export default css`
   @media (max-width: 1200px) {
     #work-page-content {
       width: 90%;
+      padding: 4rem;
     }
   }
 
   @media (max-width: 850px) {
     #work-page-content {
       width: 75%;
+      padding: 1.75rem;
     }
 
     ul {

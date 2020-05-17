@@ -11,6 +11,17 @@ export default css`
     margin-bottom: 1.75rem;
   }
 
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  ul:first-of-type {
+    margin-top: 2rem;
+  }
+
   .hero-img {
     height: 100%;
     width: 100%;
@@ -42,7 +53,7 @@ export default css`
 
   .buttons-container {
     padding: 0;
-    margin: 1rem auto;
+    margin: 2.25rem auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,7 +61,7 @@ export default css`
 
   .left-col,
   .right-col {
-    padding: 1.75rem;
+    padding: 1.75rem 1.75rem 2.25rem 1.75rem;
   }
 
   .left-col {
