@@ -34,12 +34,12 @@ export async function getStaticProps({ params: { id } }) {
 
   const prevWork = allWorks[workIdx - 1] || allWorks[allWorks.length - 1];
   const prev = prevWork
-    ? { url: `/work/${prevWork.id}`, name: prevWork.title, icon: "◄" }
+    ? { url: `/work/${prevWork.id}`, name: prevWork.title || "", icon: "◄" }
     : null;
 
   const nextWork = allWorks[workIdx + 1] || allWorks[0];
   const next = nextWork
-    ? { url: `/work/${nextWork.id}`, name: nextWork.title, icon: "►" }
+    ? { url: `/work/${nextWork.id}`, name: nextWork.title || "", icon: "►" }
     : null;
 
   return {
