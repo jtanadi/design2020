@@ -12,7 +12,8 @@ export default css`
   }
 
   video {
-    width: 100.5%;
+    width: 100%;
     max-height: 100%;
+    transform: scale(1.005);
   }
 `;
