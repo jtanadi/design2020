@@ -7,12 +7,14 @@ import Bio from "../components/Bio";
 import { WorkInterface } from "../components/WorkCard";
 import WorkContainer from "../components/WorkContainer";
 
+import { domain } from "../utils/endpoints"
+
 interface IndexPropsInterface {
   bio: string;
   works: WorkInterface[];
 }
 
-const resumeLink = { url: "/docs/JesenTanadi_Resume.pdf", name: "Resume" };
+const resumeLink = { url: `${domain}/data/JesenTanadi_Resume.pdf`, name: "Resume" };
 const emailLink = { url: "mailto:mail@jesentanadi.com", name: "Email" };
 
 export default function Index(props: IndexPropsInterface) {
