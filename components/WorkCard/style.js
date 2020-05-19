@@ -20,19 +20,22 @@ export default css`
   }
 
   .card-link {
-    text-decoration: none;
-    color: black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     position: relative;
   }
 
-  .card-link:active {
+  .card-link a {
+    text-decoration: none;
     color: black;
   }
 
-  .card-link:visited {
+  .card-link a:active {
+    color: black;
+  }
+
+  .card-link a:visited {
     color: black;
   }
 
@@ -49,6 +52,7 @@ export default css`
     flex: 1;
     width: 100%;
     height: 100%;
+    min-height: 23rem;
     padding: 1.75rem;
     position: relative;
     display: grid;
@@ -66,7 +70,7 @@ export default css`
     z-index: 99;
   }
 
-  .card-container.no-hover:hover {
+  .card-container.empty:hover {
     box-shadow: none;
   }
 
@@ -134,8 +138,8 @@ export default css`
       border-left: 1px solid black;
     }
 
-    .card-link:nth-last-child(2) {
-      border-bottom: 1px solid black;
+    .empty {
+      display: none;
     }
   }
 
@@ -150,6 +154,14 @@ export default css`
 
     .description {
       margin-top: 0.75rem;
+    }
+
+    .card-link:last-child {
+      border-bottom: 0;
+    }
+
+    .empty {
+      display: none;
     }
   }
 `;
