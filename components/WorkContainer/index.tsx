@@ -4,7 +4,7 @@ import WorkCard, { WorkInterface } from "../WorkCard";
 export default function WorkContainer(props: { works: WorkInterface[] }) {
   const { works } = props;
   const emptyWork: WorkInterface = {
-    id: "#",
+    id: "empty",
     title: "",
     description: "",
   };
