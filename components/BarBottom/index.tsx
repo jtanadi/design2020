@@ -53,6 +53,7 @@ export default function BarBottom() {
 
   useEffect(() => {
     handleWindowResize();
+    handleScroll();
     window.addEventListener("resize", handleWindowResize);
 
     return () => {

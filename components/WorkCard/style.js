@@ -70,6 +70,10 @@ export default css`
     z-index: 99;
   }
 
+  .card-container.empty {
+    z-index: 0;
+  }
+
   .card-container.empty:hover {
     box-shadow: none;
   }
@@ -138,7 +142,7 @@ export default css`
       border-left: 1px solid black;
     }
 
-    .empty {
+    card-container.empty {
       display: none;
     }
   }
@@ -160,7 +164,7 @@ export default css`
       border-bottom: 0;
     }
 
-    .empty {
+    card-container.empty {
       display: none;
     }
   }
