@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
@@ -14,10 +15,10 @@ export interface WorkInterface {
   tags?: string[];
 }
 
-function _WorkCard(props: { work: WorkInterface; hover: boolean }) {
+function _WorkCard(props: { work: WorkInterface; empty?: boolean }) {
   const {
     work: { title, hero, tags, description },
-    hover,
+    empty,
   } = props;
 
   return (
@@ -27,7 +28,7 @@ function _WorkCard(props: { work: WorkInterface; hover: boolean }) {
       <div className="spacer bottom-left"></div>
       <div className="spacer bottom-right"></div>
 
-      <div className={`card-container ${!hover ? "no-hover" : ""}`}>
+      <div className={`card-container ${empty ? "empty" : ""}`}>
         <h2>{title}</h2>
 
         <div className="left-container">
@@ -48,28 +49,28 @@ function _WorkCard(props: { work: WorkInterface; hover: boolean }) {
   );
 }
 
-export default function WorkCard(props: { work: WorkInterface }) {
-  const { work } = props;
-
-  if (work.id === "#") {
-    return (
-      <>
-        <div className="card-link">
-          <_WorkCard work={work} hover={false} />
-        </div>
-        <style jsx>{style}</style>
-      </>
-    );
-  }
-
+function withLink(id: string, Component: ReactElement): ReactElement {
   return (
     <>
-      <Link href={work.id !== "#" ? `/work/${work.id}` : ""}>
-        <a className="card-link">
-          <_WorkCard work={work} hover={true} />
-        </a>
+      <Link href={`/work/${id}`}>
+        <a>{Component}</a>
       </Link>
       <style jsx>{style}</style>
     </>
+  );
+}
+
+export default function WorkCard(props: { work: WorkInterface }) {
+  const { work } = props;
+  return (
+    <div className="card-link">
+      {work.id === "empty" ? (
+        <_WorkCard work={work} empty={true} />
+      ) : (
+        withLink(work.id, <_WorkCard work={work} />)
+      )}
+
+      <style jsx>{style}</style>
+    </div>
   );
 }
