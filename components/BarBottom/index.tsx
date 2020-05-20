@@ -30,8 +30,16 @@ const getDocHeight = () => {
 
 export default function BarBottom() {
   const [docHeight, setDocHeight] = useState(0);
+  const [middleSpacer, setMiddleSpacer] = useState(true);
   const handleWindowResize = (): void => {
     setDocHeight(getDocHeight());
+
+    // Width below 850px => single column layout
+    if (window.innerWidth < 850) {
+      setMiddleSpacer(false);
+    } else {
+      setMiddleSpacer(true);
+    }
   };
 
   const [atBottom, setAtBottom] = useState(false);
@@ -99,7 +107,7 @@ export default function BarBottom() {
   return (
     <>
       <div id="bar-bottom" style={{ zIndex: atBottom ? 98 : null }}>
-        <BarSpacers location="bottom" />
+        <BarSpacers location="bottom" showMiddle={middleSpacer} />
         <div id="button-container">
           <button
             onClick={handleClick}
