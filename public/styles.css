@@ -93,14 +93,10 @@ p a:hover, li a:hover {
   font-family: "NeueHaasUnicaW1G-Italic";
 }
 
-.work-page-header-award li {
-  font-size: 1rem;
-}
-
 .work-page-header-award p,
 .work-page-header-footnote p {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 button {
@@ -115,10 +111,11 @@ button:hover {
 
 @media (max-width: 400px) {
   .bio-markdown p, .work-page-header-description p {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
-  .work-page-header-markdown li {
+  .work-page-header-award p,
+  .work-page-header-footnote p {
     font-size: 0.85rem;
   }
 }
@@ -130,7 +127,8 @@ button:hover {
     font-size: 1.15rem;
   }
 
-  .work-page-header-markdown li {
+  .work-page-header-award p,
+  .work-page-header-footnote p {
     font-size: 0.9rem;
   }
 
@@ -148,6 +146,11 @@ button:hover {
   .work-description p {
     font-size: 1.175rem;
   }
+
+  .work-page-header-award p,
+  .work-page-header-footnote p {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 1601px) and (max-width: 1800px) {
@@ -158,6 +161,11 @@ button:hover {
 
   .work-description p {
     font-size: 1.225rem;
+  }
+
+  .work-page-header-award p,
+  .work-page-header-footnote p {
+    font-size: 1.05rem;
   }
 }
 
