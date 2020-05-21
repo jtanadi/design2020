@@ -1,12 +1,23 @@
 import fetch from "isomorphic-unfetch";
+import useSWR from "swr";
+
 import { api } from "../../utils/endpoints";
+import { jsonFetcher } from "../../utils/fetchers";
 
 import BarTop from "../../components/BarTop";
 import BarBottomWork from "../../components/BarBottomWork";
+import Loading from "../../components/Loading";
 import WorkPageHeader from "../../components/WorkPageHeader";
 import WorkPageContent from "../../components/WorkPageContent";
 
-export default function Work({ workData, content, prev, next }) {
+export default function Work({ id, prev, next }) {
+  const { data, error } = useSWR(`${api}/work/${id}`, jsonFetcher);
+
+  if (error) return <div>Something's not right. Please try again!</div>;
+  if (!data) return <Loading />;
+
+  const { data: workData, content } = data;
+
   return (
     <div>
       <BarTop leftLink={{ url: "/", name: "Home" }} workPage={true} />
@@ -27,9 +38,6 @@ export async function getStaticProps({ params: { id } }) {
   const worksResponse = await fetch(`${api}/works`);
   const allWorks = await worksResponse.json();
 
-  const workResponse = await fetch(`${api}/work/${id}`);
-  const workData = await workResponse.json();
-
   const workIdx = allWorks.findIndex((work) => work.id === id);
 
   const prevWork = allWorks[workIdx - 1] || allWorks[allWorks.length - 1];
@@ -44,8 +52,7 @@ export async function getStaticProps({ params: { id } }) {
 
   return {
     props: {
-      workData: workData.data,
-      content: workData.content,
+      id,
       prev,
       next,
     },

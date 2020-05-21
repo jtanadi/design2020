@@ -1,28 +1,32 @@
 import fetch from "isomorphic-unfetch";
+import useSWR from "swr";
+
 import { api } from "../utils/endpoints";
+import { domain } from "../utils/endpoints";
+import { jsonFetcher } from "../utils/fetchers";
 
 import BarTop from "../components/BarTop";
 import BarBottom from "../components/BarBottom";
 import Bio from "../components/Bio";
-import { WorkInterface } from "../components/WorkCard";
+import Loading from "../components/Loading";
 import WorkContainer from "../components/WorkContainer";
 
-import { domain } from "../utils/endpoints"
-
-interface IndexPropsInterface {
-  bio: string;
-  works: WorkInterface[];
-}
-
-const resumeLink = { url: `${domain}/data/JesenTanadi_Resume.pdf`, name: "Resume" };
+const resumeLink = {
+  url: `${domain}/data/JesenTanadi_Resume.pdf`,
+  name: "Resume",
+};
 const emailLink = { url: "mailto:mail@jesentanadi.com", name: "Email" };
 
-export default function Index(props: IndexPropsInterface) {
+export default function Index({ bio }) {
+  const { data, error } = useSWR(`${api}/works`, jsonFetcher);
+  if (error) return <div>Error loading. Please try again!</div>;
+  if (!data) return <Loading />;
+
   return (
     <div>
       <BarTop leftLink={resumeLink} rightLink={emailLink} />
-      <Bio bio={props.bio} />
-      <WorkContainer works={props.works} />
+      <Bio bio={bio} />
+      <WorkContainer works={data} />
       <BarBottom />
     </div>
   );
@@ -32,8 +36,5 @@ export async function getStaticProps() {
   const bioResponse = await fetch(`${api}/bio`);
   const bio = await bioResponse.json();
 
-  const worksResponse = await fetch(`${api}/works`);
-  const works = await worksResponse.json();
-
-  return { props: { bio, works } };
+  return { props: { bio } };
 }
