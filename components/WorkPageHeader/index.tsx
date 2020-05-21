@@ -11,7 +11,6 @@ export type HeaderData = {
 
 export default function WorkHeader({ headerData }) {
   const { hero, title, description, links, awards, footnotes } = headerData;
-  console.log(hero);
 
   const renderButtons = () => {
     return links ? (
