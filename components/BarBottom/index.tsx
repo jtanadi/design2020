@@ -52,7 +52,8 @@ export default function BarBottom() {
       .clientHeight;
     const targetLocation: number =
       document.getElementById("work-container").offsetTop - offsetHeight;
-    if (window.scrollY >= targetLocation) {
+
+    if (Math.round(window.scrollY) >= targetLocation) {
       setDirection(Direction.UP);
     } else {
       setDirection(Direction.DOWN);
