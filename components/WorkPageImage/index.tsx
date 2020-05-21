@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { domain } from "../../utils/endpoints";
 
 import style from "./style";
 
