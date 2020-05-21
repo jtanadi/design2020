@@ -38,20 +38,11 @@ export default function BarTop(props: Props) {
   const [showMiddle, setShowMiddle] = useState(true);
   if (workPage) {
     const handleSpacers = () => {
-      if (
-        window.innerWidth <= 850 &&
-        ((leftLink && !rightLink) || (!leftLink && rightLink))
-      ) {
-        setShowMiddle(false);
-      } else {
-        setShowMiddle(true);
-      }
-
       const workContent = document.getElementById("work-page-content");
       if (workContent) {
         if (
           window.scrollY + barTop.current.clientHeight >=
-          workContent.offsetTop
+          workContent.offsetTop || window.innerWidth <= 850
         ) {
           setShowMiddle(false);
         } else {

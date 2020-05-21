@@ -142,8 +142,12 @@ export default css`
       border-left: 1px solid black;
     }
 
-    card-container.empty {
+    .card-container.empty {
       display: none;
+    }
+
+    .card-link:nth-last-child(2) {
+      border-bottom: 1px solid black;
     }
   }
 
@@ -164,8 +168,8 @@ export default css`
       border-bottom: 0;
     }
 
-    card-container.empty {
-      display: none;
+    .right-container {
+      margin-top: 1.5rem;
     }
   }
 `;
