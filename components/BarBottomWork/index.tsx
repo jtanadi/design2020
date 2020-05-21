@@ -21,24 +21,17 @@ function renderButton(id: string, link: LinkProp) {
 
 export default function BarBottom(props: Props) {
   const { leftLink, rightLink } = props;
-
   const barRef = useRef(null);
-  const [showMiddle, setShowMiddle] = useState(true);
+
   const [middleHeight, setMiddleHeight] = useState("full");
   const handleSpacers = () => {
-    if (
-      window.innerWidth <= 850 &&
-      ((leftLink && !rightLink) || (!leftLink && rightLink))
-    ) {
-      setShowMiddle(false);
-    } else {
-      setShowMiddle(true);
-    }
-
     const headerElmt = document.getElementById("work-page-header-outer");
     const barBottomPos = window.scrollY + barRef.current.offsetTop;
 
-    if (barBottomPos >= headerElmt.offsetTop + headerElmt.clientHeight) {
+    if (
+      barBottomPos >= headerElmt.offsetTop + headerElmt.clientHeight
+      || window.innerWidth <= 850
+    ) {
       setMiddleHeight("half");
     } else {
       setMiddleHeight("full");
@@ -60,7 +53,6 @@ export default function BarBottom(props: Props) {
       <div id="bar-bottom" ref={barRef}>
         <BarSpacers
           location="bottom"
-          showMiddle={showMiddle}
           middleHeight={middleHeight}
         />
         <div id="buttons-container">
