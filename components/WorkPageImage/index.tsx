@@ -16,7 +16,7 @@ export default ({ image }) => {
     // Preload detail image
     if (image.detailUrl) {
       const img = new Image();
-      img.src = `${domain}${image.detailUrl}`;
+      img.src = `${image.detailUrl}`;
     }
   }, []);
 
@@ -37,7 +37,7 @@ export default ({ image }) => {
     <>
       <img
         className={image.detailUrl ? "detailable" : ""}
-        src={`${domain}${imgSrc}`}
+        src={`${imgSrc}`}
         onClick={handleOnClick}
       />
       <style jsx>{style}</style>

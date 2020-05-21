@@ -9,9 +9,7 @@ export default ({ content }) => {
       <div id="work-page-content">
         <div id="content-wrapper">
           {content.map((contentItem: Image | Video, i: number) => {
-            if (i === 0) return null;
-
-            return contentItem.url.endsWith(".mp4") ? (
+            return /\.mp4/.test(contentItem.url) ? (
               <WorkPageVideo key={`vid-${i}`} video={contentItem} />
             ) : (
               <WorkPageImage key={`img-${i}`} image={contentItem} />

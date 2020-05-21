@@ -1,5 +1,4 @@
 import ReactMarkdown from "react-markdown";
-import { domain } from "../../utils/endpoints";
 
 import style from "./style";
 import ButtonLink, { LinkInterface } from "../ButtonLink";
@@ -12,6 +11,7 @@ export type HeaderData = {
 
 export default function WorkHeader({ headerData }) {
   const { hero, title, description, links, awards, footnotes } = headerData;
+  console.log(hero);
 
   const renderButtons = () => {
     return links ? (
@@ -73,7 +73,7 @@ export default function WorkHeader({ headerData }) {
           <div className="left-col">
             <img
               className="hero-img"
-              src={`${domain}${hero}`}
+              src={`${hero}`}
               alt={`Hero image for ${title}`}
             />
           </div>
