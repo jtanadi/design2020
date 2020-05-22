@@ -35,13 +35,20 @@ export default css`
     color: black;
     background-color: white;
     border-bottom: 1px solid black;
+  }
+
+  .fixed {
+    position: fixed;
+  }
+
+  .unfixed {
     position: relative;
   }
 
   #work-page-header-container {
     width: 85%;
     max-width: 1600px;
-    min-height: calc(100vh - 6rem + 1px);
+    height: calc(100vh - 6rem + 1px);
     margin: 0 auto;
     padding: 0;
     display: grid;
@@ -71,9 +78,9 @@ export default css`
   }
 
   .right-col {
-    padding-left: 1.75rem;
     grid-column-start: 2;
     grid-column-end: 3;
+    overflow: hidden;
   }
 
   .spacer {
@@ -150,6 +157,7 @@ export default css`
       padding-left: 0;
       padding-top: 0;
       grid-column-start: 1;
+      overflow: hidden;
     }
   }
 
