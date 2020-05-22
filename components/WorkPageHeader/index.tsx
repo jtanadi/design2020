@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 import style from "./style";
@@ -12,29 +12,29 @@ export type HeaderData = {
 
 export default function WorkHeader({ headerData }) {
   const { hero, title, description, links, awards, footnotes } = headerData;
-  const rightColRef = useRef(null)
+  const rightColRef = useRef(null);
 
-  const [fixed, setFixed] = useState(true)
+  const [fixed, setFixed] = useState(true);
   const handleScroll = (ev) => {
-    const rightCol = rightColRef.current
-    rightCol.scrollTop = window.scrollY
+    const rightCol = rightColRef.current;
+    rightCol.scrollTop = window.scrollY;
 
     // Scroll until we're at the bottom of rightCol's scrollable area
     if (window.scrollY + rightCol.offsetHeight >= rightCol.scrollHeight) {
       // enable window scrolling here
-      setFixed(false)
+      setFixed(false);
     } else {
-      setFixed(true)
+      setFixed(true);
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const renderButtons = () => {
     return links ? (
@@ -87,7 +87,10 @@ export default function WorkHeader({ headerData }) {
 
   return (
     <>
-      <div id="work-page-header-outer" className={`${fixed ? "fixed": "unfixed"}`}>
+      <div
+        id="work-page-header-outer"
+        className={`${fixed ? "fixed" : "unfixed"}`}
+      >
         <div id="work-page-header-container">
           <div className={`spacer bottom left`}></div>
           <div className={`spacer bottom middle`}></div>
@@ -101,14 +104,16 @@ export default function WorkHeader({ headerData }) {
             />
           </div>
           <div className="right-col" ref={rightColRef}>
-            <h2>{title}</h2>
-            <ReactMarkdown
-              className="work-page-header-description"
-              source={description}
-            />
-            {renderButtons()}
-            {renderAwards()}
-            {renderFootnotes()}
+            <div className="right-col-interior">
+              <h2>{title}</h2>
+              <ReactMarkdown
+                className="work-page-header-description"
+                source={description}
+              />
+              {renderButtons()}
+              {renderAwards()}
+              {renderFootnotes()}
+            </div>
           </div>
         </div>
       </div>

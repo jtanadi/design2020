@@ -83,6 +83,10 @@ export default css`
     overflow: hidden;
   }
 
+  .right-col-interior {
+    padding-bottom: 1.75rem;
+  }
+
   .spacer {
     width: 1rem;
     height: 1rem;
