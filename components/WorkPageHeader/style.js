@@ -25,7 +25,14 @@ export default css`
   .hero-img {
     height: 100%;
     width: 100%;
+  }
+
+  .img-fit-cover {
     object-fit: cover;
+  }
+
+  .img-fit-contain {
+    object-fit: contain;
   }
 
   #work-page-header-outer {

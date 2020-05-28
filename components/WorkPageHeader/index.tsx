@@ -10,7 +10,15 @@ export type HeaderData = {
 };
 
 export default function WorkHeader({ headerData }) {
-  const { hero, title, description, links, awards, footnotes } = headerData;
+  const {
+    hero,
+    heroFit,
+    title,
+    description,
+    links,
+    awards,
+    footnotes,
+  } = headerData;
 
   const renderButtons = () => {
     return links ? (
@@ -71,7 +79,7 @@ export default function WorkHeader({ headerData }) {
 
           <div className="left-col">
             <img
-              className="hero-img"
+              className={`hero-img img-fit-${heroFit ? heroFit : "cover"}`}
               src={`${hero}`}
               alt={`Hero image for ${title}`}
             />
