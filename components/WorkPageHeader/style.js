@@ -33,6 +33,8 @@ export default css`
 
   .img-fit-contain {
     object-fit: contain;
+    height: calc(100vh - 6rem + 1px);
+    margin-top: -1rem;
   }
 
   #work-page-header-outer {
