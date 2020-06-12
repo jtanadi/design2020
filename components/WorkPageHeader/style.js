@@ -23,8 +23,11 @@ export default css`
   }
 
   .hero-img {
-    height: 100%;
     width: 100%;
+    height: calc(100vh - 6rem - 3.5rem + 1px);
+    position: sticky;
+    position: -webkit-sticky;
+    top: calc(3rem + 1.75rem + 1px);
   }
 
   .img-fit-cover {
@@ -33,8 +36,6 @@ export default css`
 
   .img-fit-contain {
     object-fit: contain;
-    height: calc(100vh - 6rem + 1px);
-    margin-top: -1rem;
   }
 
   #work-page-header-outer {
